@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { User } from '../interfaces/user';
 import { UsersService } from './users.service';
 
@@ -8,6 +8,12 @@ export class UsersController {
   @Get('/')
   findAll(): User[] {
     return this.usersService.getAllUsers();
+  }
+
+  @Post('/')
+  addUser(@Body() user: User): User {
+    return this.usersService.addUser(user);
+
   }
 
 }

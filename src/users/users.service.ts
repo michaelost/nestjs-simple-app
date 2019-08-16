@@ -7,10 +7,7 @@ export class UsersService {
 
   addUser(user: User): User {
     this.users.push(user);
-    return {
-      name: 'michaelost',
-      age: 20,
-    };
+    return user;
   }
 
   getAllUsers(): User[] {
